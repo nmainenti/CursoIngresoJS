@@ -1,18 +1,19 @@
 function mostrar()
 {
 
-	var contador=0;
-	// declarar variables
-	
-	var respuesta='si';
+  var hiscore   = 0;
+  var lowscore  = 0;
+	var respuesta = 0;
 
-	while(respuesta!='no')
-	{
-		
-	
-	}
+  while (respuesta != "basta") {
+    respuesta = prompt("ingresar un número - basta para parar");
+    if (parseInt(respuesta)) {             // sumar la respuesta solo si es un numero
+      if     (parseInt(respuesta) > hiscore ) hiscore  = parseInt(respuesta);
+      else if(parseInt(respuesta) < lowscore) lowscore = parseInt(respuesta);
+    }
+  }
 
-
-
+  document.getElementById("maximo").value = hiscore;
+  document.getElementById("minimo").value = lowscore;
 
 }//FIN DE LA FUNCIÓN
