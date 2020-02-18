@@ -6,15 +6,39 @@ y una de las cuatro operaciones básicas (suma, resta,
  el resultado de la operación y presionar el botón Aceptar.
 se debe informar si el resultado es el correcto o no.
 */
-var respuesta;
-function comenzar()
-{
+var resultado;
 
-	
+function comenzar() {
+  var primerNumero  = Math.floor(Math.random() * (10 + 1));
+  var segundoNumero = Math.floor(Math.random() * (10 + 1));
+  var operador  = Math.floor(Math.random() * (3));
+  document.getElementById("PrimerNumero" ).value = primerNumero;
+  document.getElementById("SegundoNumero").value = segundoNumero;
+  switch(operador){
+    case 0:
+      operador = "+";
+      resultado = primerNumero + segundoNumero;
+      break;
+    case 1:
+      operador = "-";
+      resultado = primerNumero - segundoNumero;
+      break;
+    case 2:
+      operador = "x";
+      resultado = primerNumero * segundoNumero;
+      break;
+    case 3:
+      operador = "/";
+      resultado = primerNumero / segundoNumero;
+      break;
+  }
+  document.getElementById("Operador").value = operador;
+}
 
-}//FIN DE LA FUNCIÓN
-function Responder()
-{
-	
 
-}//FIN DE LA FUNCIÓN
+function Responder() {
+  var respuesta = parseInt(document.getElementById("Respuesta").value);
+  if(respuesta == resultado) alert("el resultado es correcto");
+  else alert("el resultado no es correcto");
+
+}

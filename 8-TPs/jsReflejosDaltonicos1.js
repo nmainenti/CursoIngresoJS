@@ -6,16 +6,15 @@ mostrara el texto de un color entre los 6 posibles
 */
 var ColorSecreto;
 var tiempoInicio;
-function comenzar()
-{
 
-	
-
-}//FIN DE LA FUNCIÓN
-function Responder(colorParametro)
-{
-	
-	
+function comenzar() {
 
 
-}//FIN DE LA FUNCIÓN
+
+}
+function Responder(colorParametro) {
+
+
+
+
+}
