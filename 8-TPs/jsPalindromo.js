@@ -1,6 +1,6 @@
 /*3.		Un palíndromo (del griego palin dromein, volver a ir atrás)
 				  	<br>	Es una palabra, número o frase que se lee igual adelante que atrás.
-				  	<br>Si se trata de un numeral, usualmente en notación indoarábiga, se llama capicúa. 
+				  	<br>Si se trata de un numeral, usualmente en notación indoarábiga, se llama capicúa.
 
 					<br>	debemos poder identificar las frases numeros o palabras que son palindromos
 
@@ -15,52 +15,24 @@ Temas que quedan fuera del alcance deseado:
   3- las letras mayusculas
   4- vectores
 */
-function verificarPalindromo () 
+function verificarPalindromo ()
 {
-	var palabraIngresada;
-	var palabraSinEspacios;
-	var palabraInvertida;
-	var i;
-
-
-
-	palabraIngresada=palabra.value;
-	//console.log(palabra.legth);
-
-	palabraSinEspacios="";
-	palabraInvertida="";
-
-	for(i=0;i<palabraIngresada.length;i++)
-	{
-		//console.log(palabraIngresada[i]);
-		if (palabraIngresada[i]==" ") 
-		{
-			continue;
-		}
-		palabraSinEspacios=palabraSinEspacios+palabraIngresada[i];
-	}
-	//console.log("sin espacios: "+palabraSinEspacios);
-
-	for(i=0;i<palabraSinEspacios.length;i++)
-	{
-		palabraInvertida=palabraSinEspacios[i]+palabraInvertida;
-	}
-
-	if(palabraInvertida==palabraSinEspacios)
-	{
-		alert("es palindromo");
-	}
-	else
-	{
-		alert("mmm, no");
-	}
-	console.log("ingresada: "+palabraIngresada);
-	console.log("sin espacios: "+palabraSinEspacios);
-	console.log("cadena invertida:"+palabraInvertida);
-
+  var palabra = document.getElementById("palabra").value;
+  var palabraSinEspacios = palabra.replace(/\s+/g, '');
+  var palabraInvertida   = invertirString(palabraSinEspacios);
+  if(palabraSinEspacios == palabraInvertida) alert("\"" + palabra + "\"" +  " es un palíndromo");
+  else alert("\"" + palabra + "\"" + " no es un palíndromo");
 }
 
-/* 
+function invertirString(str){
+  var nuevaStr = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    nuevaStr += str[i];
+  }
+  return nuevaStr;
+}
+
+/*
 algunos palindromos para testear:
 neuquen
 luz azul
